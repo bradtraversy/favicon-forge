@@ -9,16 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "icojs": "^0.19.5",
+    "jszip": "^3.10.1",
+    "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.2"
+    "sharp": "^0.34.3",
+    "to-ico": "^1.1.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
