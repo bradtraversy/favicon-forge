@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+const checkerboard =
+  'bg-[linear-gradient(45deg,_#eee_25%,_transparent_25%,_transparent_75%,_#eee_75%,_#eee),_linear-gradient(45deg,_#eee_25%,_transparent_25%,_transparent_75%,_#eee_75%,_#eee)] bg-[length:16px_16px] bg-[0_0,8px_8px]';
+
 type FaviconPreviewProps = {
   imageUrl: string;
 };
@@ -126,12 +129,31 @@ export default function FaviconPreview({ imageUrl }: FaviconPreviewProps) {
 
   return (
     <div className='mt-2 w-full flex flex-col items-center'>
+      {/* Browser tab mockup */}
+      <div className='w-[220px] h-10 rounded-t-lg bg-zinc-200 dark:bg-zinc-800 shadow flex items-center px-4 mb-4 relative'>
+        <div className='w-5 h-5 flex items-center justify-center rounded overflow-hidden border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900'>
+          <img
+            src={imageUrl}
+            alt='Favicon tab preview'
+            width={20}
+            height={20}
+            style={{ objectFit: 'contain', width: 20, height: 20 }}
+          />
+        </div>
+        <span className='ml-3 text-xs text-zinc-600 dark:text-zinc-300 font-medium truncate'>
+          Your Site Title
+        </span>
+        <div className='absolute right-3 flex gap-1'>
+          <span className='w-2 h-2 rounded-full bg-zinc-400 inline-block' />
+          <span className='w-2 h-2 rounded-full bg-zinc-400 inline-block' />
+        </div>
+      </div>
       <span className='text-sm text-gray-500 mb-2'>Preview:</span>
       <div className='flex gap-6 flex-wrap justify-center'>
         {[16, 32, 48, 64].map((size) => (
           <div key={size} className='flex flex-col items-center'>
             <div
-              className='rounded shadow border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 flex items-center justify-center'
+              className={`rounded shadow border border-gray-200 dark:border-zinc-700 flex items-center justify-center transition-colors ${checkerboard}`}
               style={{ width: size, height: size }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
