@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@vercel/analytics": "^1.5.0",
     "icojs": "^0.19.5",
     "jszip": "^3.10.1",
     "next": "15.4.2",
